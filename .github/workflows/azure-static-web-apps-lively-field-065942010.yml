@@ -10,7 +10,7 @@ on:
       - main
 
 jobs:
-  build_and_deploy_job:
+   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
@@ -31,7 +31,7 @@ jobs:
           api_location: ""  # API source code path (optional)
           output_location: "."  # Built app content directory (optional)
           github_id_token: ${{ secrets.GITHUB_TOKEN }}  # Default GitHub token for authentication
-          deployment_action: "upload"  # Action to upload/deploy the app
+          action: "upload"  # Corrected action parameter
 
 
   close_pull_request_job:
