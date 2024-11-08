@@ -31,6 +31,8 @@ jobs:
           api_location: ""  # API source code path (optional)
           output_location: "."  # Built app content directory (optional)
           github_id_token: ${{ secrets.GITHUB_TOKEN }}  # Default GitHub token for authentication
+          deployment_action: "upload"  # Action to upload/deploy the app
+
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
