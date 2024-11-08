@@ -29,7 +29,8 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            return await github.getOctokit(process.env.GITHUB_TOKEN).request('POST /github-action/token')
+            // Get GitHub token for Azure OIDC authentication
+            return process.env.GITHUB_TOKEN;
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and Deploy to Azure Static Web App
