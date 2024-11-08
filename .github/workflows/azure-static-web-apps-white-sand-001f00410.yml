@@ -44,7 +44,6 @@ jobs:
           output_location: "build" # Optional: Path to built app content directory if needed
           skip_app_build: true
           github_id_token: ${{ steps.idtoken.outputs.result }}
-          skip_deploy_on_missing_secrets: false  # Ensure this is not skipping deployment if missing a secret
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
